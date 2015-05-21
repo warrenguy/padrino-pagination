@@ -4,11 +4,9 @@
       %li
         =link_to "Prev", url(controller, action, params.merge("page" => previous_page)), :class => :prev_next
 
-    - ([1,current_page-5].max()..[total_pages,current_page+5].min()).each do |page|
-      %li{:class => ( "active" if page == current_page) }
-        =link_to page, url(controller, action, params.merge("page" => page))
     %li
-      ="Page #{current_page} of #{total_pages}"
+      %span
+        ="Page #{current_page} of #{total_pages}"
 
 
     - if next_page
